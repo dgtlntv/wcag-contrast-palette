@@ -1,0 +1,24 @@
+{
+    "name": "perceptual-contrast-palette",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "dist/index.js",
+    "bin": {
+        "generate-palette": "./dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "generate": "npm run build && node dist/src/index.js",
+        "generate:save": "npm run build && node dist/src/index.js --output palette.json",
+        "test": "npm run build && node dist/test/generateColorScale.test.js"
+    },
+    "dependencies": {
+        "colorjs.io": "^0.6.0-alpha.1",
+        "wcag-contrast": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/wcag-contrast": "^3.0.3",
+        "typescript": "^5.0.0"
+    }
+}
